@@ -1,4 +1,4 @@
-import { User } from '../model/Model';
+import { User, UserAttribute } from '../model/Model';
 
 export class AuthService {
   public async login(
@@ -13,5 +13,15 @@ export class AuthService {
     } else {
       return undefined;
     }
+  }
+
+  public async getUserAttributes(user: User): Promise<UserAttribute[]> {
+    const result: UserAttribute[] = [];
+    result.push({ Name: 'Iowa', Value: 'Hawkeyes' });
+    result.push({ Name: 'Wisconsin', Value: 'Badgers' });
+    result.push({ Name: 'Northwester', Value: 'Wildcats' });
+    result.push({ Name: 'Minnesota', Value: 'Golden Gophers' });
+    result.push({ Name: 'Illinois', Value: 'Fighting Illni' });
+    return result;
   }
 }
