@@ -1,3 +1,4 @@
+import { ICreateSpaceState } from '../components/spaces/CreateSpace';
 import { Space } from '../model/Model';
 
 export class DataService {
@@ -24,5 +25,9 @@ export class DataService {
 
   public async reserveSpace(spaceId: string): Promise<string | undefined> {
     return spaceId === 'Hempstead' ? '5555' : undefined;
+  }
+
+  public async createSpace(iCreateSpace: ICreateSpaceState) {
+    return '123';
   }
 }
